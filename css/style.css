@@ -37,8 +37,7 @@ body {
 
 #timeline {
 	width: 14px;
-	border: 1px solid #bababa;
-	background: #f4f4f4;
+	background: #e8e8e8;
 	border-radius: 7px;
 	height: 100%;
 	padding: 20px 0px;
@@ -55,7 +54,6 @@ body {
 	height: 30px;
 	line-height: 30px;
 	border-radius: 15px;
-	border: 1px solid #bababa;
 	background: #ffffff;
 	left: 0px;
 	right: 0px;
@@ -64,7 +62,65 @@ body {
 	font-weight: normal;
 }
 
-.timelineElement {
+.level {
 	margin-top: 20px;
 	margin-bottom: 20px;
+	position: relative;
+}
+
+.event {
+	height: 100px;
+}
+
+.infoDot {
+	position: absolute;
+	content: "";
+	display: block;
+	width: 30px;
+	height: 30px;
+	border-radius: 15px;
+	background: #bababa;
+	left: 0px;
+	right: 0px;
+	margin: auto;
+	top: 0px;
+}
+
+.info {
+	background: #f4f4f4;
+	padding: 10px;
+	width: 390px;
+	height: 80px;
+	position: absolute;
+}
+
+.info.leftInfo {
+	left: 0px;	
+}
+
+.info.rightInfo {
+	right: 0px;	
+}
+
+.info:after {
+	content: "";
+	display: block;
+	width: 0; 
+	height: 0; 
+	position: absolute;
+	top: 0px;
+}
+
+.info.leftInfo:after {
+	right: -14px;
+	border-top: 15px solid transparent;
+	border-bottom: 15px solid transparent;
+	border-left: 15px solid #f4f4f4;
+}
+
+.info.rightInfo:after {
+	left: -14px;
+	border-top: 15px solid transparent;
+	border-bottom: 15px solid transparent; 
+	border-right:15px solid #f4f4f4; 
 }
