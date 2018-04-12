@@ -1,18 +1,19 @@
 [
 	{
 		"name": "HackBCA III",
-		"description": "",
-		"date": "",
+		"description": "Test Description 1",
+		"date": "4/02/16",
 		"links": [
-			"www.github.com"
+			["Github", "www.github.com"],
+			["Another", "www.github.com"]
 		] 
 	},
 	{
 		"name": "HackBCA IV",
-		"description": "",
-		"date": "",
+		"description": "Test description 2",
+		"date": "3/25/17",
 		"links": [
-			"www.google.com"
+			["Another", "www.github.com"]
 		] 
 	}
 ]

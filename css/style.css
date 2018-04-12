@@ -69,7 +69,7 @@ body {
 }
 
 .event {
-	height: 100px;
+	height: 150px;
 }
 
 .infoDot {
@@ -90,7 +90,7 @@ body {
 	background: #f4f4f4;
 	padding: 10px;
 	width: 390px;
-	height: 80px;
+	height: 130px;
 	position: absolute;
 }
 
@@ -123,4 +123,73 @@ body {
 	border-top: 15px solid transparent;
 	border-bottom: 15px solid transparent; 
 	border-right:15px solid #f4f4f4; 
+}
+
+.infoDate {
+	position: absolute;
+	top: 0px;
+	line-height: 30px;
+	width: 200px;
+}
+
+.info.leftInfo .infoDate {
+	left: 475px;	
+	text-align: left;
+}
+
+.info.rightInfo .infoDate {
+	right: 475px;
+	text-align: right;
+}
+
+.info h1 {
+	font-size: 20px;
+	padding: 0px;
+	margin: 0px;
+	margin-bottom: 5px;
+	font-weight: 500;
+}
+
+.info p {
+	margin: 0px;
+	padding: 0px;
+	height: 85px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.info h3 {
+	margin: 0px;
+	padding: 0px;
+	font-size: 15px;
+	font-weight: 500;
+	position: relative;
+	height: 18px;
+	line-height: 18px;
+}
+
+.info h3:before {
+	content: "Links:";
+	font-weight: 300;
+	margin-right: 10px;
+}
+
+.info h3 span a {
+	color: black !important;
+	text-decoration: none !important;
+}
+
+.info h3 span:after {
+	content: "";
+	display: inline-block;
+	width: 6px;
+	height: 6px;
+	border-radius: 3px;
+	background: black;
+	margin: 0px 15px;
+	vertical-align: middle;
+}
+
+.info h3 span:last-child:after {
+	display: none;
 }
