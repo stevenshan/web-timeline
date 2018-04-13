@@ -110,7 +110,8 @@ body {
 	right: 0px;	
 }
 
-.info:after {
+.info:after,
+.info:before {
 	content: "";
 	display: block;
 	width: 0; 
@@ -119,11 +120,28 @@ body {
 	top: 0px;
 }
 
+.info:before {
+	background: #f4f4f4;
+	width: 5px;
+	height: 30px;
+	border-radius: 2px;
+}
+
+.info.leftInfo:before {
+	right: -15px;
+	margin-right: 14px;
+}
+
 .info.leftInfo:after {
 	right: -15px;
 	border-top: 15px solid transparent;
 	border-bottom: 15px solid transparent;
 	border-left: 15px solid #f4f4f4;
+}
+
+.info.rightInfo:before {
+	left: -15px;
+	margin-left: 14px;
 }
 
 .info.rightInfo:after {
