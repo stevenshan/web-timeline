@@ -120,14 +120,14 @@ body {
 }
 
 .info.leftInfo:after {
-	right: -14px;
+	right: -15px;
 	border-top: 15px solid transparent;
 	border-bottom: 15px solid transparent;
 	border-left: 15px solid #f4f4f4;
 }
 
 .info.rightInfo:after {
-	left: -14px;
+	left: -15px;
 	border-top: 15px solid transparent;
 	border-bottom: 15px solid transparent; 
 	border-right:15px solid #f4f4f4; 
