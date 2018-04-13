@@ -20,7 +20,7 @@ function finishedLoading()
 	document.body.removeChild(document.getElementById("loadingMessage"));
 }
 
-var colors = ["#fcdd75", "#ca5454", "#e8a040", "#ebc59c", "#7e92b9"];
+var colors = ["#ca5454", "#e8a040", "#fcdd75", "#7e92b9", "#ebc59c"];
 
 // get a random integer in the range [0, max)
 function randint(max) 
