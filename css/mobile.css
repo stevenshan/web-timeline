@@ -1,0 +1,76 @@
+.mobile #container {
+	width: 95%;
+}
+
+.mobile #timeline {
+	left: 30%;
+	margin: 0px;
+}
+
+.mobile .divider {
+	margin: 0px;
+	left: 30%;	
+	right: auto;
+	margin-left: -60px;
+	font-size: 35px;
+	line-height: 60px;
+	height: 60px;
+	border-radius: 30px;
+}
+
+.mobile .infoDot {
+	left: 30%;
+	margin: 0px;
+	margin-left: -8px;
+}
+
+.mobile .infoDate {
+	text-align: right;
+	padding-right: 50px;
+	padding-left: 30px;
+	right: 0px;
+	font-size: 25px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border-radius: 20px;
+	margin-top: -5px;
+	margin-right: -5px;
+}
+
+.mobile .event {
+	height: 220px;
+}
+
+.mobile .info {
+	right: 0px !important;
+	left: auto !important;
+	height: 200px;
+}
+
+.mobile .info h1 {
+	font-size: 33px;
+}
+
+.mobile .info p {
+	font-size: 28px;
+	height: 125px;
+}
+
+.mobile .info h3 {
+	font-size: 28px;
+	line-height: 32px;
+	height: 32px;
+}
+
+.mobile .info {
+	width: 63%;
+}
+
+.mobile .info:after {
+	left: -14px;
+	border-top: 15px solid transparent;
+	border-bottom: 15px solid transparent; 
+	border-right:15px solid #f4f4f4; 
+	border-left: 0px;
+	right: auto;
+}

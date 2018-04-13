@@ -4,6 +4,10 @@ body {
     font-weight: 300;
 }
 
+#body {
+	width: 100%;
+}
+
 #loadingMessage {
 	position: fixed;
 	width: 100%;
@@ -178,6 +182,7 @@ body {
 	height: 85px;
 	overflow: hidden;
 	text-overflow: ellipsis;
+	font-weight: 300;
 }
 
 .info h3 {
@@ -188,6 +193,9 @@ body {
 	position: relative;
 	height: 18px;
 	line-height: 18px;
+	overflow: hidden;
+	text-overflow: hidden;
+	white-space: nowrap;
 }
 
 .info h3:before {
