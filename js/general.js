@@ -6,6 +6,7 @@ var DEFAULT_COLOR = 0; // only works if RANDOM_COLORS is false
 var RANDOM_SIDES = false; // randomize side timeline events are on
 var CHRONOLOGICAL = true; // false for oldest first; true for newest first
 var DIVIDERS = true; // false for no year dividers; true for year dividers
+var DATA_FILE = "projects.json"; 
 
 // https://stackoverflow.com/questions/3514784/what-is-the-best-way-to-detect-a-mobile-device-in-jquery
 var isMobile = false; //initiate as false
@@ -93,7 +94,7 @@ $(function(){
 	var yearCounter = -1;
 
 	// asynchronous call to retrieve data
-	$.getJSON("projects.json", function(data){
+	$.getJSON(DATA_FILE, function(data){
 		// change date strings to date objects
 		data = convertDates(data);
 		console.log(data);
