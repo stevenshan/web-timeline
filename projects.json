@@ -27,8 +27,8 @@
 		]
 	},
 	{
-		"name": "Project 5",
-		"description": "Sample description 5",
+		"name": "Project 6",
+		"description": "Similar to HackBCA III project but with added features such as friend-based event suggestions, ability to sign up for events, and an improved user interface. Hosted on an Amazon AWS EC2 instance and employed git version control for group collaboration",
 		"date": "12/25/18",
 		"links": [
 			["Github", "www.github.com"]
