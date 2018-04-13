@@ -51,7 +51,7 @@ body {
 
 .divider {
 	position: relative;
-	width: 300px;
+	width: 350px;
 	height: 30px;
 	line-height: 30px;
 	border-radius: 15px;
@@ -71,20 +71,6 @@ body {
 
 .event {
 	height: 150px;
-}
-
-.infoDot {
-	position: absolute;
-	content: "";
-	display: block;
-	width: 30px;
-	height: 30px;
-	border-radius: 15px;
-	background: #bababa;
-	left: 0px;
-	right: 0px;
-	margin: auto;
-	top: 0px;
 }
 
 .info {
@@ -130,17 +116,52 @@ body {
 	position: absolute;
 	top: 0px;
 	line-height: 30px;
-	width: 200px;
+	border-radius: 15px;
+	white-space: nowrap;
+	font-size: 13px;
+	font-weight: 500;
 }
 
-.info.leftInfo .infoDate {
-	left: 475px;	
+.infoDot {
+	position: absolute;
+	content: "";
+	display: block;
+	width: 30px;
+	height: 30px;
+	border-radius: 15px;
+	background: #bababa;
+	left: 0px;
+	right: 0px;
+	margin: auto;
+	top: 0px;
+}
+
+.infoDot:after {
+	position: absolute;
+	content: "";
+	display: block;
+	width: 18px;
+	height: 18px;
+	border-radius: 9px;
+	background: #ffffff;
+	left: 0px;
+	right: 0px;
+	top: 0px;
+	bottom: 0px;
+	margin: auto;
+}
+
+.leftDate {
 	text-align: left;
+	padding-right: 20px;
+	padding-left: 35px;
 }
 
-.info.rightInfo .infoDate {
-	right: 475px;
+.rightDate {
 	text-align: right;
+	padding-right: 35px;
+	padding-left: 20px;
+	right: 0px;
 }
 
 .info h1 {

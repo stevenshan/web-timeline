@@ -1,7 +1,7 @@
 // settings
 var RANDOM_COLORS = true; // randomize color of timeline labels
 var DEFAULT_COLOR = 0; // only works if RANDOM_COLORS is false
-var RANDOM_SIDES = true; // randomize side timeline events are on
+var RANDOM_SIDES = false; // randomize side timeline events are on
 var CHRONOLOGICAL = true; // false for oldest first; true for newest first
 var DIVIDERS = true; // false for no year dividers; true for year dividers
 
@@ -106,6 +106,8 @@ $(function(){
 
 				var dataClass = (i % 2 == 0 ? 
 								 "leftInfo" : "rightInfo")
+				var dateClass = (i % 2 == 0 ? 
+								 "leftDate" : "rightDate")
 
 				// generate html code for links section
 				links = "<h3>"
@@ -115,12 +117,16 @@ $(function(){
 				});
 				links += "</h3>";
 
+				var eventColor = randColor();
 				elem = "<div class=\"level event\">" + 
 						"<div class=\"infoDot\" style=\"background : " +
-						randColor() + "\"></div>" + 
-						"<div class=\"info " + dataClass + "\">" + 
-						"<div class=\"infoDate\">" +
+						eventColor + "\">" + 
+						"<div class=\"infoDate " +
+						dateClass + "\" style=\"background: " +
+						eventColor + "\">" +
 						formatDate(e["date"]) + "</div>" + 
+						"</div>" + 
+						"<div class=\"info " + dataClass + "\">" + 
 						"<h1>" + e["name"] + "</h1>" +
 						"<p>" + e["description"] + "</p>" + 
 						links +
@@ -132,7 +138,8 @@ $(function(){
 				{
 					lastYear = e["date"].getFullYear();	
 					container.append("<div class=\"divider level\" style=\"" + 
-						"background: " + randColor() + "\">" +
+						"background: " + randColor() + "\" id=\"" + 
+						lastYear + "\">" +
 						lastYear + "</div>");
 				}
 
