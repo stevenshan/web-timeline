@@ -161,7 +161,7 @@ $(function(){
 
 				if (COLOR_BY_YEAR)
 				{
-					dividerColor = colors[yearCounter];
+					dividerColor = colors[yearCounter % colors.length];
 				}
 
 				var dividerElem = "<div class=\"divider level\" style=\"" + 
@@ -174,7 +174,7 @@ $(function(){
 
 			if (COLOR_BY_YEAR)
 			{
-				eventColor = colors[yearCounter];
+				eventColor = colors[yearCounter % colors.length];
 			}
 
 			if (e["description"] == "" && e["links"].length == 0)
