@@ -58,7 +58,17 @@ function convertDates(data)
 {
 	for (i = 0; i < data.length; i++)
 	{
-		data[i]["date"] = new Date(data[i]["date"]);
+		var original = data[i]["date"]
+		data[i]["date"] = new Date(original);
+		if ("onlyYear" in data[i] && data[i]["onlyYear"])
+		{
+			data[i]["sDate"] = original;
+			data[i]["date"].setDate(data[i]["date"].getDate() + 1);
+		}
+		else
+		{
+			data[i]["sDate"] = formatDate(data[i]["date"]);
+		}
 	}	
 	return data;
 }
@@ -86,6 +96,7 @@ $(function(){
 	$.getJSON("projects.json", function(data){
 		// change date strings to date objects
 		data = convertDates(data);
+		console.log(data);
 
 		// sort events by date
 		data.sort(function(a, b){
@@ -93,7 +104,7 @@ $(function(){
 									a["date"] > b["date"]);		
 		});
 
-		container.append("<div id=\"timeline\"></div>")
+		container.append("<div id=\"timeline\"></div>");
 
 		var lastYear = null;
 
@@ -134,6 +145,10 @@ $(function(){
 				links += "<span><a href=\"https://" + link[1] + "\">" + 
 						 link[0] + "</a></span>";
 			});
+			if (e["links"].length == 0)
+			{
+				links += "None";
+			}
 			links += "</h3>";
 
 			dividerElem = false;
@@ -162,20 +177,38 @@ $(function(){
 				eventColor = colors[yearCounter];
 			}
 
-			elem = "<div class=\"level event\">" + 
-					"<div class=\"infoDot\" style=\"background : " +
-					eventColor + "\">" + 
-					"<div class=\"infoDate " +
-					dateClass + "\" style=\"background: " +
-					eventColor + "\">" +
-					formatDate(e["date"]) + "</div>" + 
-					"</div>" + 
-					"<div class=\"info " + dataClass + "\">" + 
-					"<h1>" + e["name"] + "</h1>" +
-					"<p>" + e["description"] + "</p>" + 
-					links +
-					"</div>" +
-					"</div>";
+			if (e["description"] == "" && e["links"].length == 0)
+			{
+				elem = "<div class=\"level event smallEvent\">" + 
+						"<div class=\"infoDot\" style=\"background : " +
+						eventColor + "\">" + 
+						"<div class=\"infoDate " +
+						dateClass + "\" style=\"background: " +
+						eventColor + "\">" +
+						e["sDate"] + "</div>" + 
+						"</div>" + 
+						"<div class=\"info " + dataClass + "\">" + 
+						"<h1>" + e["name"] + "</h1>" +
+						"</div>" +
+						"</div>";
+			}
+			else
+			{
+				elem = "<div class=\"level event\">" + 
+						"<div class=\"infoDot\" style=\"background : " +
+						eventColor + "\">" + 
+						"<div class=\"infoDate " +
+						dateClass + "\" style=\"background: " +
+						eventColor + "\">" +
+						e["sDate"] + "</div>" + 
+						"</div>" + 
+						"<div class=\"info " + dataClass + "\">" + 
+						"<h1>" + e["name"] + "</h1>" +
+						"<p>" + e["description"] + "</p>" + 
+						links +
+						"</div>" +
+						"</div>";
+			}
 
 			if (DIVIDERS && dividerElem !== false)
 			{
@@ -201,5 +234,5 @@ $(function(){
 		}
 
 		finishedLoading();
-	})
+	});
 });

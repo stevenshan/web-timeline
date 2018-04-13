@@ -37,14 +37,28 @@
 	margin-right: -5px;
 }
 
+.mobile .level {
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+
 .mobile .event {
 	height: 220px;
+}
+
+.mobile .smallEvent {
+	height: 80px;
 }
 
 .mobile .info {
 	right: 0px !important;
 	left: auto !important;
 	height: 200px;
+}
+
+.mobile .smallEvent .info {
+	height: 60px;
+	line-height: 60px;
 }
 
 .mobile .info h1 {

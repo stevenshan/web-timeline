@@ -51,6 +51,7 @@ body {
 	left: 0px;
 	right: 0px;
 	margin: auto;
+	z-index: -1;
 }
 
 .divider {
@@ -73,8 +74,19 @@ body {
 	position: relative;
 }
 
+.level:nth-of-type(2) {
+	margin-top: 0px;
+}
+.level:last-of-type {
+	margin-bottom: 0px;
+}
+
 .event {
 	height: 150px;
+}
+
+.smallEvent {
+	height: 50px;
 }
 
 .info {
@@ -83,6 +95,11 @@ body {
 	width: 390px;
 	height: 130px;
 	position: absolute;
+}
+
+.smallEvent .info {
+	height: 30px;
+	line-height: 30px;
 }
 
 .info.leftInfo {
@@ -174,6 +191,11 @@ body {
 	margin: 0px;
 	margin-bottom: 5px;
 	font-weight: 500;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	display: block;
+	width: 100%;
 }
 
 .info p {
@@ -189,7 +211,7 @@ body {
 	margin: 0px;
 	padding: 0px;
 	font-size: 15px;
-	font-weight: 500;
+	font-weight: 300;
 	position: relative;
 	height: 18px;
 	line-height: 18px;
@@ -207,6 +229,7 @@ body {
 .info h3 span a {
 	color: black !important;
 	text-decoration: none !important;
+	font-weight: 500;
 }
 
 .info h3 span:after {
