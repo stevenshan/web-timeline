@@ -43,7 +43,7 @@
 }
 
 .mobile .event {
-	height: 220px;
+	height: 310px;
 }
 
 .mobile .smallEvent {
@@ -53,7 +53,7 @@
 .mobile .info {
 	right: 0px !important;
 	left: auto !important;
-	height: 200px;
+	height: 290px;
 }
 
 .mobile .smallEvent .info {
@@ -67,7 +67,7 @@
 
 .mobile .info p {
 	font-size: 28px;
-	height: 125px;
+	height: 215px;
 }
 
 .mobile .info h3 {
