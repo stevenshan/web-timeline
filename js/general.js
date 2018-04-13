@@ -1,4 +1,6 @@
 // settings
+var COLOR_BY_YEAR = true; /* make all labels for the same year the same
+							 color; overwrites RANDOM_COLORS */
 var RANDOM_COLORS = true; // randomize color of timeline labels
 var DEFAULT_COLOR = 0; // only works if RANDOM_COLORS is false
 var RANDOM_SIDES = false; // randomize side timeline events are on
@@ -54,13 +56,14 @@ function convertDates(data)
 }
 
 $(function(){
-	finishedLoading();
 
 	// get window dimensions
 	windowDim = {x: $(window).width(), y: $(window).height()};
 
 	// counter to make sure no more than 2 adjacent events go to same side
 	var counter = 0;
+
+	var yearCounter = -1;
 
 	// asynchronous call to retrieve data
 	$.getJSON("projects.json", function(data){
@@ -117,7 +120,32 @@ $(function(){
 				});
 				links += "</h3>";
 
+				dividerElem = false;
+				// add generated html code to document
+				if (e["date"].getFullYear() != lastYear)
+				{
+					yearCounter += 1;
+					lastYear = e["date"].getFullYear();	
+					var dividerColor = randColor();
+
+					if (COLOR_BY_YEAR)
+					{
+						dividerColor = colors[yearCounter];
+					}
+
+					var dividerElem = "<div class=\"divider level\" style=\"" + 
+						"background: " + dividerColor + "\" id=\"" + 
+						lastYear + "\">" +
+						lastYear + "</div>";
+				}
+
 				var eventColor = randColor();
+
+				if (COLOR_BY_YEAR)
+				{
+					eventColor = colors[yearCounter];
+				}
+
 				elem = "<div class=\"level event\">" + 
 						"<div class=\"infoDot\" style=\"background : " +
 						eventColor + "\">" + 
@@ -133,19 +161,16 @@ $(function(){
 						"</div>" +
 						"</div>";
 
-				// add generated html code to document
-				if (DIVIDERS && e["date"].getFullYear() != lastYear)
+				if (DIVIDERS && dividerElem !== false)
 				{
-					lastYear = e["date"].getFullYear();	
-					container.append("<div class=\"divider level\" style=\"" + 
-						"background: " + randColor() + "\" id=\"" + 
-						lastYear + "\">" +
-						lastYear + "</div>");
+					container.append(dividerElem);
 				}
 
 				container.append(elem);
 
 			});
 		}
+
+		finishedLoading();
 	})
 });
